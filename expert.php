@@ -1,6 +1,7 @@
 <?php
 
-declare(strict_types=1);
+
+// declare(strict_types=1);
 
 // Below are several code blocks, read them, understand them and try to find whats wrong.
 // Once this exercise is finished, we'll go over the code all together and we can share how we debugged the following problems.
@@ -65,6 +66,47 @@ function copyright($year)
     return "&copy; $year BeCode";
 }
 //print the copyright
-print copyright(date("Y"));
+echo copyright(date("Y"));
 
 new_exercise(6);
+// === Exercise 6 ===
+// The array should be printing every letter of the alphabet (a-z)
+// Fix the code so the for loop pushes each letter of the alphabet in the array
+//solution 1: $arr = range("a","z") don't need for loop
+
+$arr = [];
+$letter =range("a","z");
+    for ($i = 0 ; $i < count($letter)  ; $i++)
+    {
+        array_push($arr, $letter[$i]);
+    }
+
+print_r($arr); // Array ([0] => a, [1] => b, [2] => c, ...) a-z alphabetical array
+
+new_exercise(7);
+
+// === Exercise 7 ===
+// Have the result of the function say: "Welcome John Smith" or "No access"
+// Depending on the given information.
+//solution || = or and && = and
+function login(string $email, string $password)
+{
+    if($email == 'john@example.be' && $password == 'pocahontas')
+    {
+        echo "Welcome John";
+        return " Smith <br>";
+    }else
+    {
+    return "No access <br>" ;
+    }
+}
+/* do not change any code below */
+//should greet the user with his full name (John Smith)
+echo login('john@example.be', 'pocahontas');
+//Should say: no access
+echo login('john@example.be', 'dfgidfgdfg');
+//Should say: no access
+echo login('wrong@example', 'wrong');
+/* You can change code again */
+
+
