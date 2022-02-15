@@ -56,4 +56,15 @@ foreach($week as &$day)
 
 print_r($week);
 
+new_exercise(5);
+// === Exercise 5 ===
+// The result should be: "Copyright © <current year> - BeCode"
+//Solution deleted int on line 63 + adding print @68
+function copyright($year)
+{
+    return "&copy; $year BeCode";
+}
+//print the copyright
+print copyright(date("Y"));
 
+new_exercise(6);
